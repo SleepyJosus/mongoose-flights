@@ -51,6 +51,7 @@
         </select>
     </div>
     <div></div>
+    <div></div>
     <div>
         <label for="arrival">Arrival Date/Time:</label>
         <input type="datetime-local"
@@ -58,9 +59,40 @@
         min="<%= flight.departs.toISOString().slice(0, 16) %>" max="2050-06-14T00:00">
     </div> 
     <div class="right">
-        <button type="submit">Submit</button>
+        <button type="submit">Add Dest</button>
     </div>
 </form>
+<h3>Tickets:</h3>
+<div class="row head">
+<div></div>
+<div>Seat:</div>
+<div></div>
+<div>Price:</div>
+<div></div>
+</div>
+<% tickets.forEach(t => { %>
+    <div class="row">
+        <div></div>
+        <div><%= t.seat %></div>
+        <div></div>
+        <div>$<%= t.price %></div>
+        <div class="right">
+            <form action="/flights/<%= flight._id %>/tickets/<%= t._id %>?_method=DELETE" class="delete-form" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+    <% }) %>
+<div class="row clear">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="right">
+        <a class="button" href="<%= flight._id %>/tickets/new">New Ticket</a>
+    </div>
+</div>
+
 </section>
 
 <%- include('../partials/footer') %>

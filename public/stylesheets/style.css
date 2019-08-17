@@ -14,6 +14,10 @@ h1 {
 h3 {
   font-size: 26px;
   margin-bottom: 10px;
+  border-top: 1px solid rgb(61, 113, 182);
+  border-left: 4px solid rgb(61, 113, 182);
+  border-top-left-radius: 10px;
+  padding: 5px 0 0 10px;
 }
 
 a {
@@ -22,9 +26,27 @@ a {
   background-color: rgb(61, 113, 182);
   padding: 2px 8px;
   border-radius: 4px;
+  display: flex;
 }
 
 a:hover {
+  background-color: blue;
+}
+
+
+.button, button {
+  background-color: gray;
+  display: inline-block;
+  padding: 2px;
+  text-decoration: none;
+  color: lightgrey;
+  border-radius: 4px;
+  border: 0px;
+  width: 100px;
+  text-align: center;
+}
+
+.button:hover, button:hover {
   background-color: blue;
 }
 
@@ -35,6 +57,13 @@ main {
 .row, form {
   display: flex;
   justify-content: space-between;
+  margin: 0 20px;
+  padding: 0 8px;
+}
+
+.delete-form {
+  margin: 0;
+  padding: 0;
 }
 
 .row {
@@ -46,6 +75,11 @@ main {
   border-left: 1px solid rgb(224, 224, 224);
   border-right: 1px solid rgb(224, 224, 224);
   padding: 0 8px;
+}
+
+.clear {
+  background-color: white;
+  border: none;
 }
 
 .head {
@@ -65,30 +99,6 @@ main {
   justify-content: flex-end;
   align-items: flex-end;
 }
-
-.button, button {
-  background-color: gray;
-  display: inline-block;
-  padding: 2px 8px;
-  text-decoration: none;
-  color: lightgrey;
-  border-radius: 3px;
-  border: 0px;
-  width: 100px;
-  height: 21px;
-  text-align: center;
-}
-
-.button:hover, button:hover {
-  background-color: blue;
-}
-
-/* form {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 60vw;
-} */
 
 label {
   margin-bottom: 5px;
