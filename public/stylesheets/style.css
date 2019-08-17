@@ -1,8 +1,132 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
 a {
-  color: #00B7FF;
+  color: lightgrey;
+  text-decoration: none;
+  background-color: rgb(61, 113, 182);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
+
+a:hover {
+  background-color: blue;
+}
+
+main {
+  padding: 0 50px;
+}
+
+.row, form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 238, 238);
+  border-bottom: 1px solid rgb(224, 224, 224);
+  border-left: 1px solid rgb(224, 224, 224);
+  border-right: 1px solid rgb(224, 224, 224);
+  padding: 0 8px;
+}
+
+.head {
+  border-top: 1px solid rgb(224, 224, 224);
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.row div, form div {
+  width: 20vw;
+  margin: 2px 0;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.button, button {
+  background-color: gray;
+  display: inline-block;
+  padding: 2px 8px;
+  text-decoration: none;
+  color: lightgrey;
+  border-radius: 3px;
+  border: 0px;
+  width: 100px;
+  height: 21px;
+  text-align: center;
+}
+
+.button:hover, button:hover {
+  background-color: blue;
+}
+
+/* form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 60vw;
+} */
+
+label {
+  margin-bottom: 5px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input, select, button, .button {
+  font-size: 14px;
+}
+
+select, input {
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgb(61, 113, 182);
+  height: 50px;
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+.highlight {
+  color: white;
+  background-color: rgb(61, 113, 182);
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+

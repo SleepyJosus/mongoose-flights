@@ -1,0 +1,67 @@
+<%- include('../partials/header') %>
+
+<% function checkDestinations(dArray, airport) { %>
+    <% for(let i = 0; i < dArray.length; i++) { %>
+    <%    if (dArray[i].airport === airport) return true; %>
+    <%    } %>
+    <% } %>
+
+<h1><%= title %></h1>
+<section class="flights">
+<div class="head row">
+    <div>Airline:</div>
+    <div>Airport:</div>
+    <div>Flight:</div>
+    <div>Departs:</div>
+    <div></div>
+</div>
+<div class="row<%= flight.departs < new Date() ? ' red' : '' %>">
+    <div><%= flight.airline %></div>
+    <div><%= flight.airport %></div>
+    <div><%= flight.flightNo %></div>
+    <div><%= flight.departs.toLocaleString() %></div>
+    <div></div>
+</div>
+<h3>Destinations:</h3>
+<div class="row head">
+    <div></div>
+    <div>Airport:</div>
+    <div></div>
+    <div>Arrival:</div>
+    <div></div>
+</div>
+<% flight.destinations.forEach(d => { %>
+    <div class="row">
+        <div></div>
+        <div><%= d.airport %></div>
+        <div></div>
+        <div><%= d.arrival.toLocaleString() %></div>
+        <div></div>
+    </div>
+    <% }) %>
+<h3>Add Destination:</h3>
+<form action="/flights/<%= flight._id %>/destinations" method="POST">
+    <div>
+        <label for="airport">Airport:</label>
+        <select name="airport">
+            <%- flight.airport === 'AUS' || checkDestinations(flight.destinations, 'AUS') ? '' : '<option value="AUS">AUS</option>' %>
+            <%- flight.airport === 'DAL' || checkDestinations(flight.destinations, 'DAL') ? '' : '<option value="DAL">DAL</option>' %>
+            <%- flight.airport === 'LAX' || checkDestinations(flight.destinations, 'LAX') ? '' : '<option value="LAX">LAX</option>' %>
+            <%- flight.airport === 'SEA' || checkDestinations(flight.destinations, 'SEA') ? '' : '<option value="SEA">SEA</option>' %>
+        </select>
+    </div>
+    <div></div>
+    <div>
+        <label for="arrival">Arrival Date/Time:</label>
+        <input type="datetime-local"
+        name="arrival" value="<%= flight.departs.toISOString().slice(0, 16) %>"
+        min="<%= flight.departs.toISOString().slice(0, 16) %>" max="2050-06-14T00:00">
+    </div> 
+    <div class="right">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+</section>
+
+<%- include('../partials/footer') %>
+

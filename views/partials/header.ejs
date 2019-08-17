@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a href="/flights" class="<%= title === 'All Flights' ? 'highlight' : '' %>">All Flights</a>
+      <a href="/flights/new" class="<%= title === 'New Flight' ? 'highlight' : '' %>">New Flight</a>
+    </nav>
+    <main>
