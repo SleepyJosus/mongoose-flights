@@ -12,13 +12,13 @@
         </div>
         <div>
             <label for="flightNo">Flight # (10-9999):</label>
-            <input type="text" name="flightNo">
+            <input type="number" name="flightNo" required min="10" max="9999">
         </div>
         <div>
             <label for="departs">Departure Date/Time:</label>
             <input type="datetime-local"
             name="departs" value="<%= new Date().toISOString().slice(0,16)%>"
-            min="2000-01-01T00:00" max="2100-06-14T00:00">
+            min="2000-01-01T00:00" max="2100-06-14T00:00" required>
         </div>      
         <div>
             <label for="airport">Airport:</label>

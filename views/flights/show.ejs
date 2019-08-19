@@ -43,7 +43,7 @@
 <form action="/flights/<%= flight._id %>/destinations" method="POST">
     <div>
         <label for="airport">Airport:</label>
-        <select name="airport">
+        <select name="airport" required>
             <%- flight.airport === 'AUS' || checkDestinations(flight.destinations, 'AUS') ? '' : '<option value="AUS">AUS</option>' %>
             <%- flight.airport === 'DAL' || checkDestinations(flight.destinations, 'DAL') ? '' : '<option value="DAL">DAL</option>' %>
             <%- flight.airport === 'LAX' || checkDestinations(flight.destinations, 'LAX') ? '' : '<option value="LAX">LAX</option>' %>
@@ -59,7 +59,7 @@
         min="<%= flight.departs.toISOString().slice(0, 16) %>" max="2050-06-14T00:00">
     </div> 
     <div class="right">
-        <button type="submit">Add Dest</button>
+        <button type="submit" id="dest-button">Add Dest</button>
     </div>
 </form>
 <h3>Tickets:</h3>
